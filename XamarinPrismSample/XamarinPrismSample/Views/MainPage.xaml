@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XamarinPrismSample.Views.MainPage"
+             Title="MainPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Text="Sample Prism App"/>
+        <StackLayout Grid.Row="1">
+            <Label Text="{Binding Title}" />
+            <Label Text="{Binding Greeting}"/>
+            <Editor Text="{Binding Name}"/>
+            <Button Text="{Binding ButtonName}" Command="{Binding ShowSomething}" CommandParameter="{Binding Name}"/>
+            <Button Text="To Page1" Command="{Binding NavigateCommand}"/>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
